@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28F1F97EAD20ADAA455DA50C /* libPods-Semaphore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C81E5533FDD1EDD4B9FF9779 /* libPods-Semaphore.a */; };
 		F29A91C21EC557BC0011393E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A91C11EC557BC0011393E /* main.m */; };
 		F29A91C51EC557BC0011393E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A91C41EC557BC0011393E /* AppDelegate.m */; };
 		F29A91C81EC557BD0011393E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F29A91C71EC557BC0011393E /* ViewController.m */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DD805693C796DB11BC51D7C /* Pods-Semaphore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Semaphore.release.xcconfig"; path = "Pods/Target Support Files/Pods-Semaphore/Pods-Semaphore.release.xcconfig"; sourceTree = "<group>"; };
+		6439B575C6AB1D5A1CA931E4 /* Pods-Semaphore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Semaphore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Semaphore/Pods-Semaphore.debug.xcconfig"; sourceTree = "<group>"; };
+		C81E5533FDD1EDD4B9FF9779 /* libPods-Semaphore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Semaphore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29A91BD1EC557BC0011393E /* Semaphore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semaphore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29A91C11EC557BC0011393E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F29A91C31EC557BC0011393E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F1F97EAD20ADAA455DA50C /* libPods-Semaphore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E05AD934E187278840ADFAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6439B575C6AB1D5A1CA931E4 /* Pods-Semaphore.debug.xcconfig */,
+				4DD805693C796DB11BC51D7C /* Pods-Semaphore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD939D343CA3D16C25417A50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C81E5533FDD1EDD4B9FF9779 /* libPods-Semaphore.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F29A91B41EC557BC0011393E = {
 			isa = PBXGroup;
 			children = (
 				F29A91BF1EC557BC0011393E /* Semaphore */,
 				F29A91BE1EC557BC0011393E /* Products */,
+				6E05AD934E187278840ADFAA /* Pods */,
+				BD939D343CA3D16C25417A50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F29A91D41EC557BD0011393E /* Build configuration list for PBXNativeTarget "Semaphore" */;
 			buildPhases = (
+				0486E808FB7D2C3884D3F918 /* [CP] Check Pods Manifest.lock */,
 				F29A91B91EC557BC0011393E /* Sources */,
 				F29A91BA1EC557BC0011393E /* Frameworks */,
 				F29A91BB1EC557BC0011393E /* Resources */,
+				6E9F66EE62DEC2CF1BC3B985 /* [CP] Embed Pods Frameworks */,
+				37FD7F6CAD14AB6F035EAA14 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0486E808FB7D2C3884D3F918 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		37FD7F6CAD14AB6F035EAA14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Semaphore/Pods-Semaphore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E9F66EE62DEC2CF1BC3B985 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Semaphore/Pods-Semaphore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F29A91B91EC557BC0011393E /* Sources */ = {
@@ -269,6 +344,7 @@
 		};
 		F29A91D51EC557BD0011393E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6439B575C6AB1D5A1CA931E4 /* Pods-Semaphore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FMT25RFF7D;
@@ -281,6 +357,7 @@
 		};
 		F29A91D61EC557BD0011393E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD805693C796DB11BC51D7C /* Pods-Semaphore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FMT25RFF7D;
@@ -310,6 +387,7 @@
 				F29A91D61EC557BD0011393E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
